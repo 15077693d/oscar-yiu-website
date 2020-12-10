@@ -66,15 +66,6 @@ const Header = () => {
     }
   }
   let labelIndex = 0;
-  if (window.location.href.includes('blog')) {
-    labelIndex = 1
-  } else
-    if (window.location.href.includes('project')) {
-      labelIndex = 2
-    } else
-      if (window.location.href.includes('contact')) {
-        labelIndex = 3
-      }
   const [value, setValue] = React.useState(labelIndex);
 
   const handleChange = (event, newValue) => {
