@@ -1,0 +1,46 @@
+import { Box, Grid, TextField } from '@material-ui/core';
+import React from 'react';
+import TitleSubtitle from '../components/title-subtitle';
+import SocialBottom from '../components/social-bottom'
+import { makeStyles } from '@material-ui/core/styles';
+import Btn from '../components/btn'
+import { containerMaxWidth, containerMinWidth, marginY } from '../utils/static-value'
+import Layout from '../components/layout'
+const Contact = () => {
+    const useStyle = makeStyles((theme) => ({
+        container: {
+            width: "80vw",
+            marginBottom: marginY,
+            [theme.breakpoints.up('md')]: {
+                minWidth: containerMinWidth - 800,
+                maxWidth: containerMaxWidth - 800
+            },
+        }
+    }))
+    const classes = useStyle()
+    return (
+        <Layout>
+                <TitleSubtitle title={"聯絡我們"} subtitle={"你的留言會電郵到我的電子郵箱，我們會在一至兩日內回覆。"} tags={[]} />
+                <form>
+                    <Grid container direction="column" alignItems="center">
+                        <Box className={classes.container}>
+                            <Grid container direction="row" justify="space-between">
+                                <TextField label="稱呼" variant="outlined" style={{ width: "45%" }} required />
+                                <TextField type="email" label="電郵地址" variant="outlined" style={{ width: "50%" }} required />
+                            </Grid>
+                            <TextField multiline={true} style={{ marginTop: marginY, width: "100%" }}
+                                inputProps={{
+                                    style: {
+                                        height: "20vh",
+                                        width: "100%"
+                                    },
+                                }} label="你的留言" variant="outlined" required />
+                        </Box>
+                        <Btn text="確定" isSubmit={true} />
+                    </Grid>
+                </form>
+        </Layout>
+    );
+};
+
+export default Contact;
