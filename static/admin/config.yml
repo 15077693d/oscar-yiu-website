@@ -3,14 +3,14 @@ backend:
   branch: master
 
 media_folder: "static/assets"
-public_folder: "/images"
+public_folder: ""
 
 collections:
   - name: 'blog'
     label: 'Blog'
     folder: 'content/blog'
-    media_folder: "static/assets/blog"
-    public_folder: "/images"
+    media_folder: "/static/assets/blog"
+    public_folder: ""
     create: true
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     editor:
@@ -29,8 +29,8 @@ collections:
   - name: 'project'
     label: 'Project'
     folder: 'content/project'
-    media_folder: "static/assets/project"
-    public_folder: "/images"
+    media_folder: "/static/assets/project"
+    public_folder: ""
     create: true
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     editor:
