@@ -10,14 +10,18 @@ collections:
     label: 'Blog'
     folder: 'content/blog'
     create: true
-    slug: 'index'
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     media_folder: ''
     public_folder: ''
-    path: '{{title}}/index'
     editor:
       preview: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
+      - { name: "thumbnail", label: "Featured Image", widget: "image"}
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Category', name: 'category', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'TableOfContent', name: 'tableOfContent', widget: 'markdown' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: "Tags", name: "tags", widget: "list" }
+  
