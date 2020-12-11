@@ -24,7 +24,7 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: "Tags", name: "tags", widget: "list" }
   
-    - name: 'project'
+  - name: 'project'
     label: 'Project'
     folder: 'content/project'
     media_folder: "static/assets/project"
@@ -40,4 +40,3 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Url", name: "url", widget: "string"}
-  
