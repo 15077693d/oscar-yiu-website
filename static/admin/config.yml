@@ -40,9 +40,10 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { name: "Images", label: "images", widget: list, field: { name: image, label: Image, widget: image }}
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: "Tags", name: "tags", widget: "list", 
-          fields: 
-              - { name: 'tag', label: 'Tag', widget: 'string' }
-              - { name: 'class', label: 'Class', widget: 'string' }
-        }
+      - label: "Tags"
+      name: "tags"
+      widget: "list"
+      fields: 
+        - { name: 'tag', label: 'Tag', widget: 'string' }
+        - { name: 'class', label: 'Class', widget: 'string' }
       - { label: "Url", name: "url", widget: "string"}
