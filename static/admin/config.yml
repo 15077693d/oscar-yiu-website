@@ -13,10 +13,8 @@ collections:
     public_folder: ""
     create: true
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
-    editor:
-      preview: false
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog"}
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "blog"}
       - { label: 'Title', name: 'title', widget: 'string' }
       - { name: "thumbnail", label: "Featured Image", widget: "image"}
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
@@ -25,6 +23,7 @@ collections:
       - { label: 'TableOfContent', name: 'tableOfContent', widget: 'markdown' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: "Tags", name: "tags", widget: "list", field: { name: tag, label: Tag, widget: string } }
+
   - name: 'project'
     label: 'Project'
     folder: 'content/project'
@@ -32,12 +31,10 @@ collections:
     public_folder: ""
     create: true
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
-    editor:
-      preview: false
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "project"}
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "project"}
       - { label: 'Title', name: 'title', widget: 'string' }
       - { name: "Images", label: "images", widget: list, field: { name: image, label: Image, widget: image }}
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: "Tags", name: "tags", widget: "list"}
+      - { label: "Tags", name: "tags", widget: "list", fields: [ { name: tag, label: Tag, widget: string }, { name: class, label: Class, widget: string }]}
       - { label: "Url", name: "url", widget: "string"}
