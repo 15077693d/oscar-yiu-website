@@ -25,7 +25,6 @@ collections:
       - { label: 'TableOfContent', name: 'tableOfContent', widget: 'markdown' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: "Tags", name: "tags", widget: "list", field: { name: tag, label: Tag, widget: string } }
-  
   - name: 'project'
     label: 'Project'
     folder: 'content/project'
@@ -40,12 +39,5 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { name: "Images", label: "images", widget: list, field: { name: image, label: Image, widget: image }}
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: "Tags", name: "tags", widget: "list", }
+      - { label: "Tags", name: "tags", widget: "list"}
       - { label: "Url", name: "url", widget: "string"}
-      - label: "Testimonials"
-      name: "testimonials"
-      collapsed: false
-      widget: "list"
-      fields:
-        - {label: Quote, name: quote, widget: string, default: "Everything is awesome!"}
-        - {label: Author, name: author, widget: string }
