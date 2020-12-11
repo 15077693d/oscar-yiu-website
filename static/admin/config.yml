@@ -2,18 +2,19 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: static/assets
-public_folder: /assets
 
 collections:
   - name: 'blog'
     label: 'Blog'
     folder: 'content/blog'
+    media_folder: "static/assets/blog"
+    public_folder: "/images"
     create: true
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     editor:
       preview: false
     fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog"}
       - { label: 'Title', name: 'title', widget: 'string' }
       - { name: "thumbnail", label: "Featured Image", widget: "image"}
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
@@ -22,4 +23,21 @@ collections:
       - { label: 'TableOfContent', name: 'tableOfContent', widget: 'markdown' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: "Tags", name: "tags", widget: "list" }
+  
+    - name: 'project'
+    label: 'Project'
+    folder: 'content/project'
+    media_folder: "static/assets/project"
+    public_folder: "/images"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "project"}
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { name: "thumbnail", label: "Featured Image", widget: "image"}
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Url", name: "url", widget: "string"}
   
