@@ -22,7 +22,7 @@ collections:
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'TableOfContent', name: 'tableOfContent', widget: 'markdown' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: "Tags", name: "tags", widget: "list", field: { name: tag, label: Tag, widget: string } }
+      - { label: "Tags", name: "tags", widget: "list", fields: [{ name: tag, label: Tag, widget: string }] }
 
   - name: 'project'
     label: 'Project'
