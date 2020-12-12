@@ -1,8 +1,8 @@
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Grid, Box, makeStyles, Typography } from '@material-ui/core';
-import React, { useEffect } from 'react';
-import { Link } from 'gatsby';
+import React from 'react';
+import { Link, graphql, StaticQuery } from 'gatsby';
 import Btn from '../components/btn';
 import {
     pink, blue, brightGrey, containerMaxWidth, containerMinWidth, marginY
@@ -10,8 +10,32 @@ import {
 import MainTopic from '../components/main-topic'
 import ProjectItem from '../components/project-item'
 import BlogCard from '../components/blog-card'
-import SocialBottom from '../components/social-bottom'
 import logo from "../images/icon.png"
+
+const oneProjectQuery = graphql`
+{
+  allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "project"}}}, limit: 1) {
+    edges {
+      node {
+        html
+        frontmatter {
+          title
+          Images
+          url
+          tags {
+            tag
+            class
+          }
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
+}
+
+`
 
 const useStyle = makeStyles((theme) => ({
   container: {
@@ -90,8 +114,20 @@ const useStyle = makeStyles((theme) => ({
 
 const IndexPage = () => {
   const classes = useStyle()
-  let projects = []
+  console.log(oneProjectQuery)
   let blogs = []
+  const projectNode = () => <StaticQuery query={oneProjectQuery} render={({allMarkdownRemark})=>{
+      console.log(allMarkdownRemark.edges[0].node)
+      const data =allMarkdownRemark.edges[0].node
+      let project = {}
+      project.content = data.html
+      project.tags = data.frontmatter.tags
+      project.title = data.frontmatter.title
+      project.images = data.frontmatter.Images
+      project.url  = data.frontmatter.url
+      return  <ProjectItem project={project} haveBtn={true} /> }
+   }/>
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -117,8 +153,7 @@ const IndexPage = () => {
           <Box className={classes.container}>
             <Grid className={classes.section2} container direction="column" alignItems="center" >
               <MainTopic text="我的項目" />
-              {projects.length > 0
-                ? <ProjectItem project={projects[0]} haveBtn={true} /> : null}
+                {projectNode()}
             </Grid>
             <Box className={classes.section3}>
               <MainTopic text="我的網誌" />

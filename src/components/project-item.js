@@ -74,12 +74,14 @@ const ProjectItem = ({ project, haveBtn }) => {
         }
     }))
     let classes = useStyles()
+    console.log(project)
     return (
         <Box className={classes.root} >
+            <div style={{ backgroundImage: `url(${images[0]})`,width:"100px",height:"100px" }} >123</div>
             <Box className={classes.projectImageContainer}>
                 <Carousel autoPlay={false} navButtonsAlwaysVisible={true} className={classes.projectImage}>
-                    {images.map(image => <img key={image.name} style={{ position: "absolute", width: "100%", height: "100%" }} 
-                    src={process.env.NODE_ENV==="production"?image.url:process.env.REACT_APP_DOMAIN_DEV+image.url} alt={image.name} />)}
+                    {images.map(image => <img key={image} style={{ position: "absolute", width: "100%", height: "100%" }} 
+                    src={image} alt={image} />)}
                 </Carousel>
             </Box>
             <Box className={classes.projectText}>
