@@ -4,17 +4,20 @@ import { Link } from 'gatsby'
 import TitleSubtitle from '../components/title-subtitle';
 import BlogCard from '../components/blog-card'
 import { makeStyles } from '@material-ui/core/styles';
-import { containerMaxWidth, containerMinWidth, marginY, numOfBlogEachPage } from '../utils/static-value'
+import { containerMaxWidth, containerMinWidth, marginY } from '../utils/static-value'
 import Btn from '../components/btn';
-import { createBlogGroups } from '../utils/util'
 import Layout from '../components/layout'
 const useStyle = makeStyles((theme) => ({
     container: {
         width: "80vw",
         [theme.breakpoints.up('md')]: {
             minWidth: containerMinWidth,
-            maxWidth: containerMaxWidth
-        }
+            maxWidth: containerMaxWidth,
+            gridTemplateColumns: "1fr 1fr",
+        },
+        display: "grid",
+        gridTemplateColumns: "1fr",
+        justifyItems: "center"
     },
     blogGroup: {
         display: 'flex',
@@ -61,19 +64,22 @@ const useStyle = makeStyles((theme) => ({
     }
 }))
 
-const Blogs = ({ }) => {
+export default ({ pathContext }) => {
     const classes = useStyle()
+    const { totalCategory, blogs, prevPage, nextPage } = pathContext
+    console.log(pathContext)
     return (
         <Layout>
             <Box>
-                <TitleSubtitle type="blogs" title={"我的網誌"} subtitle={"分享教材及日堂學習的過程，記錄向目標前進的點點滴滴。"} tags={[]} />
+                <TitleSubtitle type="blogs" title={"我的網誌"} subtitle={"分享教材及日堂學習的過程，記錄向目標前進的點點滴滴。"} tags={totalCategory} />
                 <Grid style={{ marginBottom: marginY }} container direction="column" alignItems="center">
                     <Box className={classes.container}>
+                        {blogs.map(blog => <BlogCard key={`blog_${blog.id}`} blog={blog} />)}
                     </Box>
                     <Grid>
                         <Grid className={classes.btns} container>
-                            <Link ><Btn text="上一頁" /></Link>
-                            <Link><Btn text="下一頁" /></Link>
+                            <Link to={prevPage}><Btn text="上一頁" /></Link>
+                            <Link to={nextPage}><Btn text="下一頁" /></Link>
                         </Grid>
                     </Grid>
                 </Grid>
@@ -81,5 +87,3 @@ const Blogs = ({ }) => {
         </Layout>
     );
 };
-
-export default Blogs;

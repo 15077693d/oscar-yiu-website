@@ -1,6 +1,7 @@
 ---
+templateKey: blog
 title: 如何安裝Python, PyCharm (Window/Mac)
-thumbnail: wpython4.PNG
+thumbnail: /assets/wpython4.PNG
 date: 2020-11-30T00:24:34.996Z
 category: 由零開始學Python
 description: Python是一種應用廣泛，容易學習的電腦編程語言。透過Pycharm開發環境進行Python編程能夠提高開發效率。本文章集中講解安裝Python及Pycharm，將來有機會再講下Python及使用Pycharm的好處。
@@ -23,34 +24,34 @@ Python是一種應用廣泛，容易學習的電腦編程語言。透過Pycharm�
    [下載PyCharm( Mac 版本 )請按此。](https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=mac&code=PCC)
 2. 在下載檔案位置點擊以下圖示，以安裝Python
 
-   ![](macpython0.png)
+   ![](/assets/macpython0.png)
 3. 點擊右下角Continue按鈕。
 
-   ![](macpython1.png)
+   ![](/assets/macpython1.png)
 4. 點擊右下角Continue按鈕。
 
-   ![](macpython2.png)
+   ![](/assets/macpython2.png)
 5. 點擊右下角Continue按鈕。
 
-   ![](macpython3.png)
+   ![](/assets/macpython3.png)
 6. 點擊agree按鈕。
 
-   ![](macpython4.png)
+   ![](/assets/macpython4.png)
 7. 輸入用戶名稱及密碼，然後點擊install Software以執行下載。
 
-   ![](macpython5.png)
+   ![](/assets/macpython5.png)
 8. 開啟Finder，點擊Applications。Python 3.8在表單上岀現，即下載成功！
 
-   ![](macpython6.png)
+   ![](/assets/macpython6.png)
 9. 在下載檔案位置點擊以下圖示，以安裝PyCharm。
 
-   ![](macpycharm0.png)
+   ![](/assets/macpycharm0.png)
 10. 把PyCharm CE圖示拖曳到右面Applications圖示。
 
-    ![](macpycharm1.png)
+    ![](/assets/macpycharm1.png)
 11. 開啟Finder，點擊Applications。PyCharm CE在表單上岀現，即下載成功！
 
-    ![](macpycharm2.png)
+    ![](/assets/macpycharm2.png)
 
 > # Window 用戶安裝步驟
 
@@ -59,43 +60,43 @@ Python是一種應用廣泛，容易學習的電腦編程語言。透過Pycharm�
    [下載Pycharm( Window 版本 )請按此。](https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=windows&code=PCC)
 2. 在下載檔案位置點擊以下圖示，以安裝Python。
 
-   ![](wpython1.PNG)
+   ![](/assets/wpython1.PNG)
 3. 點擊Install Now。
 
-   ![](wpython2.PNG)
+   ![](/assets/wpython2.PNG)
 4. 注意！請選擇Add Python 3.8 to PATH。
 
-   ![](wpython3.PNG)
+   ![](/assets/wpython3.PNG)
 5. 等待下載完成；如下載沒有進度並卡在Initializing...請看步驟六
 
-   ![](wpython4.PNG)
+   ![](/assets/wpython4.PNG)
 6. 如下載沒有進度並卡在Initializing，請點擊Cancel並重新流程，在第四步不要選擇Intall launcher for all users (recommended)。
 
-   ![](wpython3b.PNG)
+   ![](/assets/wpython3b.PNG)
 7. 點擊Close，完成下載！
 
-   ![](wpython5.PNG)
+   ![](/assets/wpython5.PNG)
 8. 在下載檔案位置點擊以下圖示，以安裝PyCharm。
 
-   ![](wpycharm1.PNG)
+   ![](/assets/wpycharm1.PNG)
 9. 點擊執行。
 
-   ![](wpycharm2.PNG)
+   ![](/assets/wpycharm2.PNG)
 10. 點擊Next。
 
-    ![](wpycharm3.PNG)
+    ![](/assets/wpycharm3.PNG)
 11. 點擊Next。
 
-    ![](wpycharm4.PNG)
+    ![](/assets/wpycharm4.PNG)
 12. 點擊Next。
 
-    ![](wpycharm5.PNG)
+    ![](/assets/wpycharm5.PNG)
 13. 點擊Install。
 
-    ![](wpycharm6.PNG)
+    ![](/assets/wpycharm6.PNG)
 14. 等待下載完成。
 
-    ![](wpycharm7.PNG)
+    ![](/assets/wpycharm7.PNG)
 15. 點擊Finish，完成下載！
 
-    ![](wpycharm8.PNG)
+    ![](/assets/wpycharm8.PNG)

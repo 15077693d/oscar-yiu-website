@@ -51,13 +51,13 @@ const TitleSubtitle = ({ tags, title, subtitle, subtitle1, subtitle2, type }) =>
     let chipElements
     if (type === "blogs") {
         chipElements = tags.map(tag => <Link key={tag} to={`/blogs/category/${tag}/0`}><Chip label={tag} clickable size="medium" /></Link>)
-        chipElements.push(<Link key={"all"} to="/blogs/category/all/0"><Chip label={"全部"} clickable size="medium" /></Link>)
+        chipElements.push(<Link key={"all"} to="/blogs/0"><Chip label={"全部"} clickable size="medium" /></Link>)
     } else
         if (type === "blog") {
             chipElements = tags.map(tag => <Link key={tag} to={`/blogs/tag/${tag}/0`}><Chip label={tag} clickable size="medium" /></Link>)
         } else if (type === "projects") {
-            chipElements = tags.map(tag => <Link key={tag} to={`/projects/tag/${tag}`}><Chip label={tag} clickable size="medium" /></Link>)
-            chipElements.push(<Link key="all" to="/projects/tag/all"><Chip label={"全部"} clickable size="medium" /></Link>)
+            chipElements = tags.map(tag => <Link key={tag} to={`/projects/${tag}`}><Chip label={tag} clickable size="medium" /></Link>)
+            chipElements.push(<Link key="all" to="/projects"><Chip label={"全部"} clickable size="medium" /></Link>)
         }
     return (<Box>
         <Grid style={{ backgroundColor: pink }} container direction="column" alignItems="center">

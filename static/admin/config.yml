@@ -2,15 +2,13 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: "static/assets"
-public_folder: ""
+media_folder: static/assets
+public_folder: /assets
 
 collections:
   - name: 'blog'
     label: 'Blog'
     folder: 'content/blog'
-    media_folder: "/static/assets/blog"
-    public_folder: ""
     create: true
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
@@ -27,14 +25,12 @@ collections:
   - name: 'project'
     label: 'Project'
     folder: 'content/project'
-    media_folder: "/static/assets/project"
-    public_folder: ""
     create: true
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
       - { label: "Template Key", name: "templateKey", widget: "hidden", default: "project"}
       - { label: 'Title', name: 'title', widget: 'string' }
       - { name: "Images", label: "images", widget: list, field: { name: image, label: Image, widget: image }}
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Description', name: 'description', widget: 'string' }
       - { label: "Tags", name: "tags", widget: "list", fields: [ { name: tag, label: Tag, widget: string }, { name: class, label: Class, widget: string }]}
       - { label: "Url", name: "url", widget: "string"}

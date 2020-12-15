@@ -98,7 +98,7 @@ const Header = () => {
             <Link to="/"><Typography className={classes.menuStyle} variant="h2">關於</Typography></Link>
           </Button>
           <Button >
-            <Link to="/blogs"><Typography className={classes.menuStyle} variant="h2">網誌</Typography></Link>
+            <Link to="/blogs/0"><Typography className={classes.menuStyle} variant="h2">網誌</Typography></Link>
           </Button>
           <Button >
             <Link to="/projects"><Typography className={classes.menuStyle} variant="h2">項目</Typography></Link>
@@ -109,7 +109,7 @@ const Header = () => {
         </Box>
       </Box>
       <Link id="0" to="/" />
-      <Link id="1" to="/blogs" />
+      <Link id="1" to="/blogs/0" />
       <Link id="2" to="/projects" />
       <Link id="3" to="/contact" />
     </Box>

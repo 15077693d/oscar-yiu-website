@@ -2,9 +2,9 @@
 templateKey: project
 title: BodyStation
 Images:
-  - project_quit.jpg
-  - project_trtres.jpg
-  - project_hooligans.jpg
+  - /assets/project_quit.jpg
+  - /assets/project_trtres.jpg
+  - /assets/project_hooligans.jpg
 tags:
   - tag: 深度學習
     class: fas fa-code-branch
@@ -13,5 +13,5 @@ tags:
   - tag: Python
     class: fab fa-python
 url: https://github.com/15077693d/BodyStation
+description: 在電腦鏡頭前透過身體移動玩指定的線上遊戲。
 ---
-在電腦鏡頭前透過身體移動玩指定的線上遊戲。

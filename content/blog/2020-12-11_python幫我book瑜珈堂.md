@@ -1,7 +1,7 @@
 ---
 templateKey: blog
 title: Python幫我Book瑜珈堂
-thumbnail: blog-yoga-1-1.png
+thumbnail: /assets/blog-yoga-1-1.png
 date: 2020-11-18T06:15:00.642Z
 category: 喂！Python！我又有idea啦！
 description: 一個開發員的日常，每天朝九晚五坐在辦公室中，面向螢光幕專心打曲。下班後，打開筆電繼續學習，世界有太多有趣好玩的科技。不過為了親愛的腰背着想，最近購買了某健身中心的瑜珈套票......
@@ -30,7 +30,7 @@ Oscar：唔記得要book添⋯⋯
 
 健身中心的網上預約系統會於每天上午九時正開放使用，而上面我和David的對話時間是上午九時零五分。只是短短五分鐘，心目中計劃預約的課堂已經爆滿，以上情況大概持續了大半個星期。在這段時間中，我經常留意預約系統有沒有後補位置，我覺得很花精神。所以我就萌生了使用Python，自動預約瑜珈班的想法了！
 
-![](blog-yoga-1-1.png)
+![](/assets/blog-yoga-1-1.png)
 
 # 項目所用工具
 

@@ -74,10 +74,8 @@ const ProjectItem = ({ project, haveBtn }) => {
         }
     }))
     let classes = useStyles()
-    console.log(project)
     return (
         <Box className={classes.root} >
-            <div style={{ backgroundImage: `url(${images[0]})`,width:"100px",height:"100px" }} >123</div>
             <Box className={classes.projectImageContainer}>
                 <Carousel autoPlay={false} navButtonsAlwaysVisible={true} className={classes.projectImage}>
                     {images.map(image => <img key={image} style={{ position: "absolute", width: "100%", height: "100%" }} 
@@ -87,14 +85,15 @@ const ProjectItem = ({ project, haveBtn }) => {
             <Box className={classes.projectText}>
                 <a href={url}><Typography variant="h1" className={classes.projectTextH1}>{title}</Typography></a>
                 <Typography variant="h2" className={classes.projectTextH2}>{content}</Typography>
-                {tags.map(tag => <Grid className={classes.iconBoxContainer} key={tag.name} container direction="row" alignItems="center">
+                {tags.map(tag => <Grid className={classes.iconBoxContainer} key={tag.tag} container direction="row" alignItems="center">
                     <Grid container justify="center" className={classes.iconBox}><i className={tag.class} /></Grid>
-                    <Typography variant="h2" className={classes.projectTextH2Tag}>{tag.name}</Typography>
+                    <Typography variant="h2" className={classes.projectTextH2Tag}>{tag.tag}</Typography>
                 </Grid>)}
-                {haveBtn ? <Link to="/projects/tag/all"><Btn marginTop={marginY} text="了解更多" /></Link> : null}
+                {haveBtn ? <Link to="/projects"><Btn marginTop={marginY} text="了解更多" /></Link> : null}
             </Box>
         </Box>
     );
 };
+
 
 export default ProjectItem;

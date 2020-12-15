@@ -2,40 +2,15 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Grid, Box, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
-import { Link, graphql, StaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 import Btn from '../components/btn';
 import {
-    pink, blue, brightGrey, containerMaxWidth, containerMinWidth, marginY
+  pink, blue, brightGrey, containerMaxWidth, containerMinWidth, marginY
 } from '../utils/static-value'
 import MainTopic from '../components/main-topic'
-import ProjectItem from '../components/project-item'
-import BlogCard from '../components/blog-card'
+import ProjectIndex from '../components/index/project'
+import BlogIndex from '../components/index/blog'
 import logo from "../images/icon.png"
-
-const oneProjectQuery = graphql`
-{
-  allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "project"}}}, limit: 1) {
-    edges {
-      node {
-        html
-        frontmatter {
-          title
-          Images
-          url
-          tags {
-            tag
-            class
-          }
-        }
-        fields {
-          slug
-        }
-      }
-    }
-  }
-}
-
-`
 
 const useStyle = makeStyles((theme) => ({
   container: {
@@ -114,19 +89,6 @@ const useStyle = makeStyles((theme) => ({
 
 const IndexPage = () => {
   const classes = useStyle()
-  console.log(oneProjectQuery)
-  let blogs = []
-  const projectNode = () => <StaticQuery query={oneProjectQuery} render={({allMarkdownRemark})=>{
-      console.log(allMarkdownRemark.edges[0].node)
-      const data =allMarkdownRemark.edges[0].node
-      let project = {}
-      project.content = data.html
-      project.tags = data.frontmatter.tags
-      project.title = data.frontmatter.title
-      project.images = data.frontmatter.Images
-      project.url  = data.frontmatter.url
-      return  <ProjectItem project={project} haveBtn={true} /> }
-   }/>
 
   return (
     <Layout>
@@ -153,15 +115,14 @@ const IndexPage = () => {
           <Box className={classes.container}>
             <Grid className={classes.section2} container direction="column" alignItems="center" >
               <MainTopic text="我的項目" />
-                {projectNode()}
+              <ProjectIndex/>
             </Grid>
             <Box className={classes.section3}>
               <MainTopic text="我的網誌" />
               <Box className={classes.blogContainer}>
-                {blogs.length > 0
-                  ? blogs.slice(0, 2).map(blog => <BlogCard key={`blog_${blog.id}`} blog={blog} />) : null}
+                <BlogIndex/>
               </Box>
-              <Link to="/blogs"><Btn text='觀看更多' /></Link>
+              <Link to="/blogs/0"><Btn text='觀看更多' /></Link>
             </Box>
           </Box>
         </Grid>
@@ -169,5 +130,7 @@ const IndexPage = () => {
     </Layout>
   );
 }
+
+
 
 export default IndexPage

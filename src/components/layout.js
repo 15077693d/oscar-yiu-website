@@ -10,6 +10,7 @@ import { ThemeProvider, createMuiTheme, Box } from '@material-ui/core';
 import Header from "./header"
 import SocialBottom from './social-bottom'
 import { pink } from '../utils/static-value'
+import { Helmet } from "react-helmet"
 const defaultTheme = createMuiTheme()
 const theme = createMuiTheme({
   typography: {
@@ -43,6 +44,9 @@ const theme = createMuiTheme({
 const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
+     <Helmet>
+      <script src="https://kit.fontawesome.com/6a918cdcfb.js" crossorigin="anonymous"></script>
+      </Helmet>
        <Header />
        <Box style={{ height: "80px", width: "100vw", backgroundColor: pink }} />
       {children}
