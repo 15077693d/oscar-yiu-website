@@ -70,20 +70,18 @@ export default ({ pathContext }) => {
     console.log(pathContext)
     return (
         <Layout>
-            <Box>
-                <TitleSubtitle type="blogs" title={"我的網誌"} subtitle={"分享教材及日堂學習的過程，記錄向目標前進的點點滴滴。"} tags={totalCategory} />
-                <Grid style={{ marginBottom: marginY }} container direction="column" alignItems="center">
-                    <Box className={classes.container}>
-                        {blogs.map(blog => <BlogCard key={`blog_${blog.id}`} blog={blog} />)}
-                    </Box>
-                    <Grid>
-                        <Grid className={classes.btns} container>
-                            <Link to={prevPage}><Btn text="上一頁" /></Link>
-                            <Link to={nextPage}><Btn text="下一頁" /></Link>
-                        </Grid>
+            <TitleSubtitle type="blogs" title={"我的網誌"} subtitle={"分享教材及日堂學習的過程，記錄向目標前進的點點滴滴。"} tags={totalCategory} />
+            <Grid style={{ marginBottom: marginY }} container direction="column" alignItems="center">
+                <Box className={classes.container}>
+                    {blogs.map(blog => <BlogCard key={`blog_${blog.id}`} blog={blog} />)}
+                </Box>
+                <Grid>
+                    <Grid className={classes.btns} container>
+                        <Link to={prevPage}><Btn text="上一頁" /></Link>
+                        <Link to={nextPage}><Btn text="下一頁" /></Link>
                     </Grid>
                 </Grid>
-            </Box>
+            </Grid>
         </Layout>
     );
 };

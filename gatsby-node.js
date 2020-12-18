@@ -22,6 +22,8 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
+
+  // project
   const projectsResult = await graphql(
     `
     {
@@ -105,6 +107,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
+  // blogs
   const blogsResult = await graphql(
     `
     {
@@ -177,7 +180,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   totalCategory.forEach(
     category => {
-      let categoryBlogs = blogs.filter(blog => blog.category===category) 
+      let categoryBlogs = blogs.filter(blog => blog.category === category)
       let categoryTotalPage = Math.floor(categoryBlogs.length / postPerPage)
       let categoryBlogPagesData = []
       for (let i = 0; i <= totalPage; i++) {
@@ -198,7 +201,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   )
   totalTags.forEach(
     tag => {
-      let tagBlogs = blogs.filter(blog => blog.tagTexts.includes(tag)) 
+      let tagBlogs = blogs.filter(blog => blog.tagTexts.includes(tag))
       let tagTotalPage = Math.floor(tagBlogs.length / postPerPage)
       let tagBlogPagesData = []
       for (let i = 0; i <= totalPage; i++) {
@@ -217,4 +220,44 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }))
     }
   )
+
+  // blog
+  const blogResult = await graphql(`
+  {
+    allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "blog"}}}) {
+      edges {
+        node {
+          frontmatter {
+            title
+            date(formatString: "YYYY年MM月DD日")
+            category
+            description
+            tags {
+              tag
+            }
+            tableOfContent
+          }
+          id
+          html
+        }
+      }
+    }
+  }
+  `)
+  const blogTemplate = path.resolve('src/template/blogTemplate.js')
+  blogResult.data.allMarkdownRemark.edges.forEach(item => {
+    const data = {
+      title: item.node.frontmatter.title,
+      category: item.node.frontmatter.category,
+      tags: item.node.frontmatter.tags.map(tag=>tag.tag),
+      created_at: item.node.frontmatter.date,
+      tableOfContent: item.node.frontmatter.tableOfContent,
+      content: item.node.html,
+    }
+    createPage({
+      path: `blog/${item.node.id}`,
+      component: blogTemplate,
+      context: data
+    })
+  })
 }
