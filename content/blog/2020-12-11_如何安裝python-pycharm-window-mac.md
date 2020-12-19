@@ -13,6 +13,11 @@ tableOfContent: |-
 tags:
   - tag: Python
 ---
+> ## 文章摘要
+
+* [Mac 用戶安裝步驟](#Mac-用戶安裝步驟)
+* [Window 用戶安裝步驟](#Window-用戶安裝步驟)
+
 Python是一種應用廣泛，容易學習的電腦編程語言。透過Pycharm開發環境進行Python編程能夠提高開發效率。本文章集中講解安裝Python及Pycharm，將來有機會再講解Python及使用Pycharm的好處。
 
 以下連結來源自官方網站Python及jetbrains，Python 版本為3.8.5。
