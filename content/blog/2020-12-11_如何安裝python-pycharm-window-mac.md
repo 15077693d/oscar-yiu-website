@@ -5,11 +5,6 @@ thumbnail: /assets/wpython4.PNG
 date: 2020-11-30T00:24:34.996Z
 category: 由零開始學Python
 description: Python是一種應用廣泛，容易學習的電腦編程語言。透過Pycharm開發環境進行Python編程能夠提高開發效率。本文章集中講解安裝Python及Pycharm，將來有機會再講下Python及使用Pycharm的好處。
-tableOfContent: |-
-  > ## 文章摘要
-
-  * [Mac 用戶安裝步驟](#Mac-用戶安裝步驟)
-  * [Window 用戶安裝步驟](#Window-用戶安裝步驟)
 tags:
   - tag: Python
 ---

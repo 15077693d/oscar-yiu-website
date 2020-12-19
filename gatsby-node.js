@@ -235,7 +235,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             tags {
               tag
             }
-            tableOfContent
           }
           id
           html

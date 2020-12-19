@@ -5,13 +5,6 @@ thumbnail: /assets/blog-yoga-1-1.png
 date: 2020-11-18T06:15:00.642Z
 category: 喂！Python！我又有idea啦！
 description: 一個開發員的日常，每天朝九晚五坐在辦公室中，面向螢光幕專心打曲。下班後，打開筆電繼續學習，世界有太多有趣好玩的科技。不過為了親愛的腰背着想，最近購買了某健身中心的瑜珈套票......
-tableOfContent: |-
-  ## 文章摘要
-
-  * [前言](#前言)
-  * [項目所用工具](#項目所用工具)
-  * [項目流程](#項目流程)
-  * [項目條件](#項目條件)
 tags:
   - tag: Python
   - tag: Selenium

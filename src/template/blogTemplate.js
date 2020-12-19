@@ -35,14 +35,13 @@ const useStyles = makeStyles((theme) => ({
 const Blog = ({ pathContext }) => {
     const classes = useStyles()
     console.log(pathContext)
-    const { title, category, tags, created_at, tableOfContent, content } = pathContext
+    const { title, category, tags, created_at, content } = pathContext
     return (
         <Layout>
             <TitleSubtitle type="blog" title={title} subtitle1={category} subtitle2={created_at} tags={tags} />
             <Grid container justify="center">
                 <Box className={classes.container}>
-                    <div dangerouslySetInnerHTML={{ __html: tableOfContent }} />;
-                    <div dangerouslySetInnerHTML={{ __html: content }} />;
+                    <div className="markdown-body" dangerouslySetInnerHTML={{ __html: content }} />;
                 </Box>
             </Grid>
         </Layout>
