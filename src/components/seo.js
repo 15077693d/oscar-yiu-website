@@ -76,7 +76,7 @@ function SEO({ description, lang, meta, title }) {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  description: ``,
+  description: `分享教材及日堂學習的過程，記錄向目標前進的點點滴滴。`,
 }
 
 SEO.propTypes = {

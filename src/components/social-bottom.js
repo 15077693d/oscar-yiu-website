@@ -99,7 +99,6 @@ const SocialBottom = ({ isContact }) => {
                             <GitHubIcon /></Box><Typography style={{ color: grey, fontWeight: "300" }} component="a" href="https://github.com/15077693d" variant="h3">15077693d</Typography></Grid></Box>
                     </Box>
                 </Box>
-
             </Grid>
         </Box>
     )

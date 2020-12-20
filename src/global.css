@@ -8,6 +8,10 @@ html,body{
     scroll-behavior: smooth;
 }
 
+.markdown-body{
+  width:80vw;
+}
+
 .markdown-body .octicon {
   display: inline-block;
   fill: currentColor;
