@@ -26,17 +26,17 @@ const Contact = () => {
             return Object.keys(data)
                 .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
                 .join("&")
-          }
-        
+        }
+
         e.preventDefault()
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: encode({
-              "form-name": e.target.getAttribute("name"),
-              name,email,content
+                "form-name": e.target.getAttribute("name"),
+                "name": name, "email": email, "content": content
             })
-          }).then(() => console.log("Thank!")).catch(error => alert(error))
+        }).then(() => console.log("Thank!")).catch(error => alert(error))
 
     }
     return (
@@ -47,10 +47,10 @@ const Contact = () => {
                 <Grid container direction="column" alignItems="center">
                     <Box className={classes.container}>
                         <Grid container direction="row" justify="space-between">
-                            <TextField label="稱呼" variant="outlined" style={{ width: "45%" }} onChange={e => setName(e.target.value)} value={name} required />
-                            <TextField type="email" label="電郵地址" variant="outlined" style={{ width: "50%" }} onChange={e => setEmail(e.target.value)} value={email} required />
+                            <TextField name="name" label="稱呼" variant="outlined" style={{ width: "45%" }} onChange={e => setName(e.target.value)} value={name} required />
+                            <TextField name="email" type="email" label="電郵地址" variant="outlined" style={{ width: "50%" }} onChange={e => setEmail(e.target.value)} value={email} required />
                         </Grid>
-                        <TextField multiline={true} style={{ marginTop: marginY, width: "100%" }}
+                        <TextField name="content" multiline={true} style={{ marginTop: marginY, width: "100%" }}
                             inputProps={{
                                 style: {
                                     height: "20vh",
