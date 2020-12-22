@@ -1,11 +1,11 @@
 import { Box, Grid, TextField } from '@material-ui/core';
-import React, { useState } from 'react';
+import React from 'react';
 import TitleSubtitle from '../components/title-subtitle';
-import SocialBottom from '../components/social-bottom'
 import { makeStyles } from '@material-ui/core/styles';
 import Btn from '../components/btn'
 import { containerMaxWidth, containerMinWidth, marginY } from '../utils/static-value'
 import Layout from '../components/layout'
+import SEO from "../components/seo";
 const Contact = () => {
     const useStyle = makeStyles((theme) => ({
         container: {
@@ -20,6 +20,7 @@ const Contact = () => {
     const classes = useStyle()
     return (
         <Layout>
+        <SEO title="聯絡我們" description="你的留言會電郵到我的電子郵箱，我們會在一至兩日內回覆。"/>
             <TitleSubtitle title={"聯絡我們"} subtitle={"你的留言會電郵到我的電子郵箱，我們會在一至兩日內回覆。"} tags={[]} />
             <form name="contact" method="POST" data-netlify="true">
                 <input type="hidden" name="form-name" value="contact" />

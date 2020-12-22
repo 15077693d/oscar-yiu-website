@@ -92,7 +92,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="主頁" />
       <Box>
         <Box>
           <Grid style={{ backgroundColor: pink }} container justify="center">
@@ -103,7 +103,7 @@ const IndexPage = () => {
                   <Box className={classes.section1Word}  >
                     <Typography className={classes.section1WordH1} variant='h1'>Hey! 我是Oscar.</Typography>
                     <Typography className={classes.section1WordH2} variant='h2'>我現在是Manulife的Python開發人員。我喜歡網頁開發和數據科學。不斷學習和探索新技術。</Typography>
-                    <Link to="/blogs"><Btn id="blog" text='我的網誌' /></Link>
+                    <Link to="/blogs/0"><Btn id="blog" text='我的網誌' /></Link>
                   </Box>
                 </Box>
               </Grid>

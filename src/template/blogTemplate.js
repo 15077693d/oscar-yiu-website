@@ -4,7 +4,7 @@ import TitleSubtitle from '../components/title-subtitle';
 import Layout from '../components/layout';
 import { makeStyles } from '@material-ui/core/styles';
 import { containerMaxWidth, containerMinWidth, marginY } from '../utils/static-value'
-
+import SEO from "../components/seo";
 const useStyles = makeStyles((theme) => ({
     container: {
         width: "80vw",
@@ -34,10 +34,10 @@ const useStyles = makeStyles((theme) => ({
 
 const Blog = ({ pathContext }) => {
     const classes = useStyles()
-    console.log(pathContext)
     const { title, category, tags, created_at, content } = pathContext
     return (
         <Layout>
+        <SEO title="title" />
             <TitleSubtitle type="blog" title={title} subtitle1={category} subtitle2={created_at} tags={tags} />
             <Grid container justify="center">
                 <Box className={classes.container}>

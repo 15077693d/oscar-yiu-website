@@ -6,7 +6,8 @@ import BlogCard from '../components/blog-card'
 import { makeStyles } from '@material-ui/core/styles';
 import { containerMaxWidth, containerMinWidth, marginY } from '../utils/static-value'
 import Btn from '../components/btn';
-import Layout from '../components/layout'
+import Layout from '../components/layout';
+import SEO from "../components/seo";
 const useStyle = makeStyles((theme) => ({
     container: {
         width: "80vw",
@@ -67,9 +68,9 @@ const useStyle = makeStyles((theme) => ({
 export default ({ pathContext }) => {
     const classes = useStyle()
     const { totalCategory, blogs, prevPage, nextPage } = pathContext
-    console.log(pathContext)
     return (
         <Layout>
+        <SEO title="我的網誌" />
             <TitleSubtitle type="blogs" title={"我的網誌"} subtitle={"分享教材及日堂學習的過程，記錄向目標前進的點點滴滴。"} tags={totalCategory} />
             <Grid style={{ marginBottom: marginY }} container direction="column" alignItems="center">
                 <Box className={classes.container}>

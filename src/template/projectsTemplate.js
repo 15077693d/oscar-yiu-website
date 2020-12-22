@@ -5,6 +5,7 @@ import ProjectItem from '../components/project-item'
 import { makeStyles } from '@material-ui/core/styles';
 import { containerMaxWidth, containerMinWidth, marginY } from '../utils/static-value'
 import Layout from '../components/layout'
+import SEO from "../components/seo";
 export default ({ pathContext }) => {
   const useStyle = makeStyles((theme) => ({
     container: {
@@ -22,6 +23,7 @@ export default ({ pathContext }) => {
 
   return (
     <Layout>
+    <SEO title="我的項目" />
       <Box>
         <TitleSubtitle type="projects" title={"我的項目"} subtitle={"在數據科學和網頁開發中遊走，透過開發項目提高興趣及技術"} tags={tags} />
         <Grid container direction="column" alignItems="center">
