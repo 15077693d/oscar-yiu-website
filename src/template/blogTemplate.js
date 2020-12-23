@@ -37,7 +37,7 @@ const Blog = ({ pathContext }) => {
     const { title, category, tags, created_at, content } = pathContext
     return (
         <Layout>
-        <SEO title="title" />
+        <SEO title={title} />
             <TitleSubtitle type="blog" title={title} subtitle1={category} subtitle2={created_at} tags={tags} />
             <Grid container justify="center">
                 <Box className={classes.container}>
