@@ -1,10 +1,10 @@
 import { Box, Grid } from '@material-ui/core';
-import React from 'react';
 import TitleSubtitle from '../components/title-subtitle';
 import Layout from '../components/layout';
 import { makeStyles } from '@material-ui/core/styles';
 import { containerMaxWidth, containerMinWidth, marginY } from '../utils/static-value'
 import SEO from "../components/seo";
+import React from 'react';
 const useStyles = makeStyles((theme) => ({
     container: {
         width: "80vw",
@@ -49,3 +49,5 @@ const Blog = ({ pathContext }) => {
 };
 
 export default Blog;
+
+

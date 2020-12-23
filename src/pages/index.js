@@ -115,12 +115,12 @@ const IndexPage = () => {
           <Box className={classes.container}>
             <Grid className={classes.section2} container direction="column" alignItems="center" >
               <MainTopic text="我的項目" />
-              <ProjectIndex/>
+              <ProjectIndex />
             </Grid>
             <Box className={classes.section3}>
               <MainTopic text="我的網誌" />
               <Box className={classes.blogContainer}>
-                <BlogIndex/>
+                <BlogIndex />
               </Box>
               <Link to="/blogs/0"><Btn text='觀看更多' /></Link>
             </Box>
