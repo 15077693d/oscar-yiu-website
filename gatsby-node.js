@@ -254,7 +254,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       content: item.node.html,
     }
     createPage({
-      path: `blog/${data.title}`,
+      path: `blog/${data.title.replace('?','')}`,
       component: blogTemplate,
       context: data
     })

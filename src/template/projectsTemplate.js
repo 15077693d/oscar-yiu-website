@@ -1,5 +1,5 @@
 import { Box, Grid } from '@material-ui/core';
-import React, { useEffect } from 'react';
+import React from 'react';
 import TitleSubtitle from '../components/title-subtitle';
 import ProjectItem from '../components/project-item'
 import { makeStyles } from '@material-ui/core/styles';
