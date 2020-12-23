@@ -75,10 +75,10 @@ const BlogCard = ({ blog }) => {
     const classes = useStyles();
     return (
         <Card className={classes.root}>
-            <Link to={`/blog/${id}`}><Box className={classes.image} /></Link>
+            <Link to={`/blog/${title}`}><Box className={classes.image} /></Link>
             <Grid container direction="column" justify="center" alignItems="center">
                 <Grid container direction="column" justify="space-between" alignItems="center">
-                    <Link to={`/blog/${id}`}><Typography className={classes.title} variant="h2">{title}</Typography></Link>
+                    <Link to={`/blog/${title}`}><Typography className={classes.title} variant="h2">{title}</Typography></Link>
                     <Grid container justify="center">
                         <Link to={`/blogs/category/${category}/0`}><Typography className={classes.category} variant="h3">{category}</Typography></Link> &nbsp;
                     <Typography className={classes.date} variant="h3">{`/ ${created_at}`}</Typography>
