@@ -80,12 +80,6 @@ const SocialBottom = ({ isContact }) => {
     let classes = useStyles()
     return (
         <Box>
-        <div style={{ overflow: "hidden", width: 728, height: 90, position: "relative", margin: "auto", marginTop:20, maxWidth:"100%"}}>
-              <a href="https://ethereumads.com" target="_new">Earn cryptocurrency with banner ads</a>
-              <a href="https://ethereumads.com/link?address=0xe131C74eBb4f11E28DA060967FDeeb454b909206&slot=0&width=728&height=90">
-                <img alt="Earn cryptocurrency with EthereumAds" src="https://ethereumads.com/media?address=0xe131C74eBb4f11E28DA060967FDeeb454b909206&slot=0&width=728&height=90" style={{ position: "absolute", top: 0, left: 0, margin: 0 }} />
-              </a>
-            </div>
             <Box className={classes.shape} />
             <Grid style={{ backgroundColor: pink }} container direction="column" alignItems="center" justify="center">
                 <Box className={classes.container}>
